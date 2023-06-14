@@ -36,3 +36,14 @@ jenkins:
       name: "agent17"
       remoteFS: "/home/jenkins/agent"
       retentionStrategy: "always"
+  - permanent:
+      labelString: "trialagent"
+      launcher:
+        ssh:
+          credentialsId: "build-agent-creds"
+          host: "trialagent"
+          port: 22
+          sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
+      name: "trialagent"
+      remoteFS: "/home/jenkins/agent"
+      retentionStrategy: "always"
